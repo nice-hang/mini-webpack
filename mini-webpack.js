@@ -13,7 +13,7 @@ const moduleAnalyser = (filename) => {
   traverse(ast, {
     ImportDeclaration({ node }) {
       const dirname = path.dirname(filename);
-      const newFile = './' + path.join(dirname, node.source.value);
+      const newFile = path.resolve(dirname, node.source.value);
       dependencies[node.source.value] = newFile;
     }
   });
@@ -70,6 +70,4 @@ const generateCode = (entry) => {
   `;
 }
 
-const code = generateCode('./src/index.js');
-
-fs.writeFileSync('./dist/bundle.js', code);
+module.exports = generateCode;
