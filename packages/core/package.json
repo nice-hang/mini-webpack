@@ -1,14 +1,14 @@
 {
-  "name": "hang-webpack",
+  "name": "@mini-webpack/core",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "bin": {
-    "hang-webpack": "bin/cli.js"
+    "mini-webpack": "bin/mini-webpack.js"
   },
   "scripts": {
-    "build": "node ./hang-webpack.js",
-    "cli": "node bin/cli.js"
+    "build": "node ./mini-webpack.js",
+    "cli": "node bin/mini-webpack.js"
   },
   "keywords": [],
   "author": "",
