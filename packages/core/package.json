@@ -1,0 +1,23 @@
+{
+  "name": "hang-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "hang-webpack": "bin/cli.js"
+  },
+  "scripts": {
+    "build": "node ./hang-webpack.js",
+    "cli": "node bin/cli.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/parser": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/traverse": "^7.28.3",
+    "commander": "^14.0.0"
+  }
+}
