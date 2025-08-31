@@ -3,7 +3,7 @@
 const { program } = require('commander');
 const path = require('path');
 const fs = require('fs');
-const miniWebpack = require('../mini-webpack');
+const Compiler = require('../lib/Compiler');
 
 program
   .version('1.0.0')
@@ -42,7 +42,8 @@ if (fs.existsSync(configPath)) {
 
 if (entry && output) {
     const absoluteEntry = path.resolve(process.cwd(), entry);
-    const code = miniWebpack(absoluteEntry);
+    const compiler = new Compiler({ entry: absoluteEntry, output });
+    const code = compiler.run();
     const dirname = path.dirname(output);
     if (!fs.existsSync(dirname)) {
         fs.mkdirSync(dirname, { recursive: true });
