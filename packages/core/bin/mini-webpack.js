@@ -48,8 +48,7 @@ if (entry && output) {
     if (!fs.existsSync(dirname)) {
         fs.mkdirSync(dirname, { recursive: true });
     }
-    fs.writeFileSync(output, code);
-    console.log(`Bundle created at: ${output}`);
+    // fs.writeFileSync(output, code);
 } else {
     program.help();
 }
