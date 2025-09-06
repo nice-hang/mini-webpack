@@ -11,7 +11,7 @@ class Compiler {
     };
   }
 
-  run() {
+  async run() {
     // TODO: 实现编译器主流程
     const compilation = new Compilation(this);
     return compilation.build();

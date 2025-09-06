@@ -43,11 +43,12 @@ if (fs.existsSync(configPath)) {
 if (entry && output) {
     const absoluteEntry = path.resolve(process.cwd(), entry);
     const compiler = new Compiler({ entry: absoluteEntry, output });
-    const code = compiler.run();
     const dirname = path.dirname(output);
     if (!fs.existsSync(dirname)) {
         fs.mkdirSync(dirname, { recursive: true });
     }
+    const code = await compiler.run();
+    console.log("%c Line:52 🍢 code", "color:#7f2b82", code);
     // fs.writeFileSync(output, code);
 } else {
     program.help();
